@@ -46,4 +46,13 @@
     self.controller.hud = hudView;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation
+{
+    if ((orientation == UIInterfaceOrientationPortrait) ||
+        (orientation == UIInterfaceOrientationLandscapeLeft))
+        return YES;
+    
+    return NO;
+}
+
 @end

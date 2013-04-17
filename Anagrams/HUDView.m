@@ -30,6 +30,17 @@
     [hud addSubview:hud.stopwatch];
     
     hud.userInteractionEnabled = NO;
+    
+    UILabel *pts = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 340, 30, 140, 70)];
+    pts.backgroundColor = [UIColor clearColor];
+    pts.font = kFontHud;
+    pts.text = @"Points:";
+    [hud addSubview:pts];
+    
+    hud.gamePoints = [CounterLabelView labelWithFont:kFontHud frame:CGRectMake(kScreenWidth - 200, 30, 200, 70) andValue:0];
+    hud.gamePoints.textColor = [UIColor colorWithRed:0.38 green:0.098 blue:0.035 alpha:1];
+    [hud addSubview:hud.gamePoints];
+    
     return hud;
 }
 

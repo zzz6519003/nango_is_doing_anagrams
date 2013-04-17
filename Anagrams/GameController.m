@@ -102,8 +102,7 @@
             [self placeTile:tileView atTarget:targetView];
 
             self.data.points += self.level.pointsPerTile;
-
-
+            [self.hud.gamePoints countTo:self.data.points withDuration:1.5];
         } else {
             NSLog(@"Failure. Let the player know this tile doesn't belong here.");
             [tileView randomize];
@@ -114,6 +113,7 @@
                                  tileView.center = CGPointMake(tileView.center.x + randomf(-20, 20), tileView.center.y + randomf(-20, 20));
                              } completion:nil];
             self.data.points -= self.level.pointsPerTile / 2;
+            [self.hud.gamePoints countTo:self.data.points withDuration:.75];
 
         }
         [self checkForSuccess];
