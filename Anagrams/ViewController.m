@@ -9,6 +9,7 @@
 #import "config.h"
 #import "ViewController.h"
 #import "Level.h"
+#import "HUDView.h"
 #import "GameController.h"
 
 @interface ViewController ()
@@ -39,7 +40,10 @@
 
     self.controller.level = level1;
     [self.controller dealRandomAnagram];
-
+    
+    HUDView *hudView = [HUDView viewWithRect:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    [self.view addSubview:hudView];
+    self.controller.hud = hudView;
 }
 
 @end

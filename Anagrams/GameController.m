@@ -14,6 +14,17 @@
 @implementation GameController {
     NSMutableArray *_tiles;
     NSMutableArray *_targets;
+    int _secondsLeft;
+    NSTimer *_timer;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self != nil) {
+        // initialize
+        self.data = [[GameData alloc] init];
+    }
+    return self;
 }
 
 //fetches a random anagram, deals the letter tiles and creates the targets
@@ -54,6 +65,7 @@
             tile.center = CGPointMake(xOffset + i * (tileSide + kTileMargin), kScreenHeight / 4 * 3);
             [tile randomize];
             
+            tile.dragDelegate = self;
             // 4
             [self.gameView addSubview:tile];
             [_tiles addObject:tile];
@@ -72,5 +84,84 @@
         }
     }
 
+    [self startStopwatch];
+}
+
+// a tile was dragged, check if matches a target
+- (void)tileView:(TileView *)tileView didDragToPoint:(CGPoint)pt {
+    TargetView *targetView = nil;
+    for (TargetView *tv in _targets) {
+        if (CGRectContainsPoint(tv.frame, pt)) {
+            targetView = tv;
+            break;
+        }
+    }
+    if (targetView != nil) {
+        if ([targetView.letter isEqualToString:tileView.letter]) {
+            NSLog(@"Success! You should place the tile here!");
+            [self placeTile:tileView atTarget:targetView];
+
+            self.data.points += self.level.pointsPerTile;
+
+
+        } else {
+            NSLog(@"Failure. Let the player know this tile doesn't belong here.");
+            [tileView randomize];
+            [UIView animateWithDuration:0.35
+                                  delay:0.00
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 tileView.center = CGPointMake(tileView.center.x + randomf(-20, 20), tileView.center.y + randomf(-20, 20));
+                             } completion:nil];
+            self.data.points -= self.level.pointsPerTile / 2;
+
+        }
+        [self checkForSuccess];
+
+    }
+}
+
+- (void)placeTile:(TileView *)tileView atTarget:(TargetView *)targetView {
+    NSLog(@"s");
+
+    targetView.isMatched = YES;
+    tileView.isMatched = YES;
+    
+    tileView.userInteractionEnabled = NO;
+    [UIView animateWithDuration:0.35
+                          delay:0.00
+                        options:UIViewAnimationOptionCurveEaseOut animations:^{
+                            tileView.center = targetView.center;
+                            tileView.transform = CGAffineTransformIdentity;
+                        } completion:^(BOOL finished) {
+                            targetView.hidden = YES;
+                        }];
+}
+
+- (void)checkForSuccess {
+    for (TargetView *t in _targets) {
+        if (t.isMatched == NO) return;
+    }
+    NSLog(@"game over");
+}
+
+- (void)startStopwatch {
+    _secondsLeft = self.level.timeToSolve;
+    [self.hud.stopwatch setSeconds:_secondsLeft];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick:) userInfo:nil repeats:YES];
+}
+
+- (void)stopStopwatch {
+    [_timer invalidate];
+    _timer = nil;
+}
+
+//stopwatch on tick
+- (void)tick:(NSTimer *)timer {
+    _secondsLeft--;
+    [self.hud.stopwatch setSeconds:_secondsLeft];
+    if (_secondsLeft == 0) {
+        [self stopStopwatch];
+    }
 }
 @end

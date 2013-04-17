@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18323C6C171E15BE0062ADB6 /* StopwatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C6B171E15BE0062ADB6 /* StopwatchView.m */; };
+		18323C6F171E1D220062ADB6 /* HUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C6E171E1D210062ADB6 /* HUDView.m */; };
+		18323C72171E35FC0062ADB6 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C71171E35FC0062ADB6 /* GameData.m */; };
 		18802227171BC40D003C7416 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 18802226171BC40D003C7416 /* Level.m */; };
 		18BFDFEC171CDF6F006E42B4 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFDFEB171CDF6F006E42B4 /* TargetView.m */; };
 		18D71BC2171BD3560046FB45 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D71BC1171BD3560046FB45 /* GameController.m */; };
@@ -45,6 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18323C6A171E15BE0062ADB6 /* StopwatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchView.h; sourceTree = "<group>"; };
+		18323C6B171E15BE0062ADB6 /* StopwatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchView.m; sourceTree = "<group>"; };
+		18323C6D171E1D210062ADB6 /* HUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDView.h; sourceTree = "<group>"; };
+		18323C6E171E1D210062ADB6 /* HUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDView.m; sourceTree = "<group>"; };
+		18323C70171E35FC0062ADB6 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		18323C71171E35FC0062ADB6 /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		18802225171BC40D003C7416 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		18802226171BC40D003C7416 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		18BFDFEA171CDF6E006E42B4 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetView.h; sourceTree = "<group>"; };
@@ -177,6 +186,10 @@
 				18D71BC4171BFA310046FB45 /* TileView.m */,
 				18BFDFEA171CDF6E006E42B4 /* TargetView.h */,
 				18BFDFEB171CDF6F006E42B4 /* TargetView.m */,
+				18323C6A171E15BE0062ADB6 /* StopwatchView.h */,
+				18323C6B171E15BE0062ADB6 /* StopwatchView.m */,
+				18323C6D171E1D210062ADB6 /* HUDView.h */,
+				18323C6E171E1D210062ADB6 /* HUDView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -186,6 +199,8 @@
 			children = (
 				18802225171BC40D003C7416 /* Level.h */,
 				18802226171BC40D003C7416 /* Level.m */,
+				18323C70171E35FC0062ADB6 /* GameData.h */,
+				18323C71171E35FC0062ADB6 /* GameData.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -364,6 +379,9 @@
 				18D71BC2171BD3560046FB45 /* GameController.m in Sources */,
 				18D71BC5171BFA310046FB45 /* TileView.m in Sources */,
 				18BFDFEC171CDF6F006E42B4 /* TargetView.m in Sources */,
+				18323C6C171E15BE0062ADB6 /* StopwatchView.m in Sources */,
+				18323C6F171E1D220062ADB6 /* HUDView.m in Sources */,
+				18323C72171E35FC0062ADB6 /* GameData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

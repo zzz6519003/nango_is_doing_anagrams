@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TileView;
+
+@protocol TileDragDelegateProtocol <NSObject>
+
+- (void)tileView:(TileView *)tileView didDragToPoint:(CGPoint)pt;
+
+@end
 
 @interface TileView : UIImageView
 
@@ -16,6 +23,8 @@
 
 @property (assign, nonatomic) BOOL isMatched;
 //isMatched: A property that will hold a Boolean indicating whether this tile has already been successfully “matched” to a target on the top of the screen.
+
+@property (weak, nonatomic) id<TileDragDelegateProtocol> dragDelegate;
 
 
 - (instancetype)initWithLetter:(NSString *)letter andSideLength:(float)sideLength;
