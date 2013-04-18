@@ -11,6 +11,8 @@
 		18323C6F171E1D220062ADB6 /* HUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C6E171E1D210062ADB6 /* HUDView.m */; };
 		18323C72171E35FC0062ADB6 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C71171E35FC0062ADB6 /* GameData.m */; };
 		18323C75171E5A0C0062ADB6 /* CounterLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C74171E5A0C0062ADB6 /* CounterLabelView.m */; };
+		183C3D0C171F866F006C1379 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C3D0B171F866F006C1379 /* AudioController.m */; };
+		183C3D0E171F92E8006C1379 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 183C3D0D171F92E8006C1379 /* TODO */; };
 		18802227171BC40D003C7416 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 18802226171BC40D003C7416 /* Level.m */; };
 		18BFDFEC171CDF6F006E42B4 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFDFEB171CDF6F006E42B4 /* TargetView.m */; };
 		18D71BC2171BD3560046FB45 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D71BC1171BD3560046FB45 /* GameController.m */; };
@@ -57,6 +59,9 @@
 		18323C71171E35FC0062ADB6 /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		18323C73171E5A0C0062ADB6 /* CounterLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterLabelView.h; sourceTree = "<group>"; };
 		18323C74171E5A0C0062ADB6 /* CounterLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterLabelView.m; sourceTree = "<group>"; };
+		183C3D0A171F866F006C1379 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		183C3D0B171F866F006C1379 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		183C3D0D171F92E8006C1379 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TODO; path = Anagrams/TODO; sourceTree = "<group>"; };
 		18802225171BC40D003C7416 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		18802226171BC40D003C7416 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		18BFDFEA171CDF6E006E42B4 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetView.h; sourceTree = "<group>"; };
@@ -178,6 +183,8 @@
 			children = (
 				18D71BC0171BD3560046FB45 /* GameController.h */,
 				18D71BC1171BD3560046FB45 /* GameController.m */,
+				183C3D0A171F866F006C1379 /* AudioController.h */,
+				183C3D0B171F866F006C1379 /* AudioController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 			children = (
 				9CCA40A616CFD85A00B16E42 /* Anagrams */,
 				9CA374C916D5825500B075C1 /* credits.txt */,
+				183C3D0D171F92E8006C1379 /* TODO */,
 				9CCA409F16CFD85A00B16E42 /* Frameworks */,
 				9CCA409E16CFD85A00B16E42 /* Products */,
 			);
@@ -368,6 +376,7 @@
 				9C96FD7416D3D407009F7882 /* level2.plist in Resources */,
 				9C96FD7616D3D40E009F7882 /* level3.plist in Resources */,
 				9CA374CA16D5825500B075C1 /* credits.txt in Resources */,
+				183C3D0E171F92E8006C1379 /* TODO in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +414,7 @@
 				18323C6F171E1D220062ADB6 /* HUDView.m in Sources */,
 				18323C72171E35FC0062ADB6 /* GameData.m in Sources */,
 				18323C75171E5A0C0062ADB6 /* CounterLabelView.m in Sources */,
+				183C3D0C171F866F006C1379 /* AudioController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

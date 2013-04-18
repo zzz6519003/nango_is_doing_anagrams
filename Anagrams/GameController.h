@@ -12,6 +12,7 @@
 #import "TileView.h"
 #import "HUDView.h"
 #import "GameData.h"
+#import "AudioController.h"
 
 
 
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) Level *level;
 @property (weak, nonatomic) HUDView *hud;
 @property (strong, nonatomic) GameData *data;
+@property (strong, nonatomic) AudioController *audioController;
 
 //display a new anagram on the screen
 - (void)dealRandomAnagram;

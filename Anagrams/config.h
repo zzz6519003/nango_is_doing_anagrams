@@ -24,4 +24,14 @@
 #define kFontHudBig [UIFont fontWithName:@"comic andy" size: 120.0]
 
 #define configed 1
+
+
+
+//audio defines
+#define kSoundDing  @"ding.mp3"
+#define kSoundWrong @"wrong.m4a"
+#define kSoundWin   @"win.mp3"
+
+#define kAudioEffectFiles @[kSoundDing, kSoundWrong, kSoundWin]
+
 #endif

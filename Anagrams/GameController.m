@@ -23,6 +23,8 @@
     if (self != nil) {
         // initialize
         self.data = [[GameData alloc] init];
+        self.audioController = [[AudioController alloc] init];
+        [self.audioController preloadAudioEffects:kAudioEffectFiles];
     }
     return self;
 }
@@ -103,6 +105,8 @@
 
             self.data.points += self.level.pointsPerTile;
             [self.hud.gamePoints countTo:self.data.points withDuration:1.5];
+            [self.audioController playEffect: kSoundDing];
+
         } else {
             NSLog(@"Failure. Let the player know this tile doesn't belong here.");
             [tileView randomize];
@@ -114,6 +118,8 @@
                              } completion:nil];
             self.data.points -= self.level.pointsPerTile / 2;
             [self.hud.gamePoints countTo:self.data.points withDuration:.75];
+            [self.audioController playEffect:kSoundWrong];
+
 
         }
         [self checkForSuccess];
