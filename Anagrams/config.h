@@ -31,7 +31,8 @@
 #define kSoundDing  @"ding.mp3"
 #define kSoundWrong @"wrong.m4a"
 #define kSoundWin   @"win.mp3"
+#define kSoundIlike @"1331430103_converted.mp4"
 
-#define kAudioEffectFiles @[kSoundDing, kSoundWrong, kSoundWin]
+#define kAudioEffectFiles @[kSoundDing, kSoundWrong, kSoundWin, kSoundIlike]
 
 #endif

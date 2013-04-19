@@ -9,7 +9,8 @@
 #import "GameController.h"
 #import "config.h"
 #import "TileView.h"
-
+#import "ExplodeView.h"
+#import "StarDustView.h"
 
 @implementation GameController {
     NSMutableArray *_tiles;
@@ -25,6 +26,9 @@
         self.data = [[GameData alloc] init];
         self.audioController = [[AudioController alloc] init];
         [self.audioController preloadAudioEffects:kAudioEffectFiles];
+        [self.audioController playEffect: kSoundIlike];
+
+        
     }
     return self;
 }
@@ -118,7 +122,7 @@
                              } completion:nil];
             self.data.points -= self.level.pointsPerTile / 2;
             [self.hud.gamePoints countTo:self.data.points withDuration:.75];
-            [self.audioController playEffect:kSoundWrong];
+//            [self.audioController playEffect:kSoundWrong];
 
 
         }
@@ -142,13 +146,29 @@
                         } completion:^(BOOL finished) {
                             targetView.hidden = YES;
                         }];
+    
+    ExplodeView *explode = [[ExplodeView alloc] initWithFrame:CGRectMake(tileView.center.x, tileView.center.y, 10, 10)];
+    [tileView.superview addSubview:explode];
+    [tileView.superview sendSubviewToBack:explode];
 }
 
 - (void)checkForSuccess {
     for (TargetView *t in _targets) {
         if (t.isMatched == NO) return;
     }
+    [self.audioController playEffect:kSoundWin];
     NSLog(@"game over");
+    
+    // win animation
+    TargetView *firstTarget = _targets[0];
+    
+    int startX = 0;
+    int endX = kScreenWidth + 300;
+    int startY = firstTarget.center.y;
+    
+    StarDustView *stars = [[StarDustView alloc] initWithFrame:CGRectMake(startX, startY, 10, 10)];
+    [self.gameView addSubview:stars];
+    [self.gameView sendSubviewToBack:stars];
 }
 
 - (void)startStopwatch {

@@ -13,8 +13,12 @@
 		18323C75171E5A0C0062ADB6 /* CounterLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18323C74171E5A0C0062ADB6 /* CounterLabelView.m */; };
 		183C3D0C171F866F006C1379 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C3D0B171F866F006C1379 /* AudioController.m */; };
 		183C3D0E171F92E8006C1379 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 183C3D0D171F92E8006C1379 /* TODO */; };
+		184B7D3A171FC609006D45DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2695E516D27B980019199F /* QuartzCore.framework */; };
+		184B7D3D1720D611006D45DE /* StarDustView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184B7D3C1720D611006D45DE /* StarDustView.m */; };
+		184B7D3F1720D8E6006D45DE /* 1331430103_converted.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 184B7D3E1720D8E6006D45DE /* 1331430103_converted.mp4 */; };
 		18802227171BC40D003C7416 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 18802226171BC40D003C7416 /* Level.m */; };
 		18BFDFEC171CDF6F006E42B4 /* TargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFDFEB171CDF6F006E42B4 /* TargetView.m */; };
+		18D2C318171FC4A30023F5CB /* ExplodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D2C317171FC4A30023F5CB /* ExplodeView.m */; };
 		18D71BC2171BD3560046FB45 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D71BC1171BD3560046FB45 /* GameController.m */; };
 		18D71BC5171BFA310046FB45 /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D71BC4171BFA310046FB45 /* TileView.m */; };
 		9C0D03BE16D2D30D00D3D45C /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C0D03BD16D2D30D00D3D45C /* win.mp3 */; };
@@ -22,7 +26,6 @@
 		9C2695D516D270A40019199F /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C2695D416D270A40019199F /* ding.mp3 */; };
 		9C2695DB16D272130019199F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2695DA16D272130019199F /* AVFoundation.framework */; };
 		9C2695DC16D2721C0019199F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2695D616D271F20019199F /* AudioToolbox.framework */; };
-		9C2695E616D27B980019199F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2695E516D27B980019199F /* QuartzCore.framework */; };
 		9C2695E816D27CBC0019199F /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C2695E716D27CBC0019199F /* particle.png */; };
 		9C2695F616D291E70019199F /* level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C2695F516D291E70019199F /* level1.plist */; };
 		9C2695F816D295520019199F /* wrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9C2695F716D295520019199F /* wrong.m4a */; };
@@ -62,10 +65,15 @@
 		183C3D0A171F866F006C1379 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		183C3D0B171F866F006C1379 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
 		183C3D0D171F92E8006C1379 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TODO; path = Anagrams/TODO; sourceTree = "<group>"; };
+		184B7D3B1720D611006D45DE /* StarDustView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarDustView.h; sourceTree = "<group>"; };
+		184B7D3C1720D611006D45DE /* StarDustView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarDustView.m; sourceTree = "<group>"; };
+		184B7D3E1720D8E6006D45DE /* 1331430103_converted.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1331430103_converted.mp4; sourceTree = "<group>"; };
 		18802225171BC40D003C7416 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		18802226171BC40D003C7416 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		18BFDFEA171CDF6E006E42B4 /* TargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetView.h; sourceTree = "<group>"; };
 		18BFDFEB171CDF6F006E42B4 /* TargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetView.m; sourceTree = "<group>"; };
+		18D2C316171FC4A30023F5CB /* ExplodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplodeView.h; sourceTree = "<group>"; };
+		18D2C317171FC4A30023F5CB /* ExplodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplodeView.m; sourceTree = "<group>"; };
 		18D71BC0171BD3560046FB45 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		18D71BC1171BD3560046FB45 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		18D71BC3171BFA310046FB45 /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
@@ -115,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2695E616D27B980019199F /* QuartzCore.framework in Frameworks */,
+				184B7D3A171FC609006D45DE /* QuartzCore.framework in Frameworks */,
 				9C2695DC16D2721C0019199F /* AudioToolbox.framework in Frameworks */,
 				9C2695DB16D272130019199F /* AVFoundation.framework in Frameworks */,
 				9CCA40A116CFD85A00B16E42 /* UIKit.framework in Frameworks */,
@@ -202,6 +210,10 @@
 				18323C6E171E1D210062ADB6 /* HUDView.m */,
 				18323C73171E5A0C0062ADB6 /* CounterLabelView.h */,
 				18323C74171E5A0C0062ADB6 /* CounterLabelView.m */,
+				18D2C316171FC4A30023F5CB /* ExplodeView.h */,
+				18D2C317171FC4A30023F5CB /* ExplodeView.m */,
+				184B7D3B1720D611006D45DE /* StarDustView.h */,
+				184B7D3C1720D611006D45DE /* StarDustView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -284,6 +296,7 @@
 		9CCA40C316CFD8BA00B16E42 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				184B7D3E1720D8E6006D45DE /* 1331430103_converted.mp4 */,
 				9C0D03C516D2D6B900D3D45C /* Fonts */,
 				9C2695E116D27A9A0019199F /* Particles */,
 				9C2695D316D270960019199F /* Audio */,
@@ -377,6 +390,7 @@
 				9C96FD7616D3D40E009F7882 /* level3.plist in Resources */,
 				9CA374CA16D5825500B075C1 /* credits.txt in Resources */,
 				183C3D0E171F92E8006C1379 /* TODO in Resources */,
+				184B7D3F1720D8E6006D45DE /* 1331430103_converted.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +429,8 @@
 				18323C72171E35FC0062ADB6 /* GameData.m in Sources */,
 				18323C75171E5A0C0062ADB6 /* CounterLabelView.m in Sources */,
 				183C3D0C171F866F006C1379 /* AudioController.m in Sources */,
+				18D2C318171FC4A30023F5CB /* ExplodeView.m in Sources */,
+				184B7D3D1720D611006D45DE /* StarDustView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
