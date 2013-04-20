@@ -29,7 +29,7 @@
     hud.stopwatch.seconds = 0;
     [hud addSubview:hud.stopwatch];
     
-    hud.userInteractionEnabled = NO;
+    hud.userInteractionEnabled = YES;
     
     UILabel *pts = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth - 340, 30, 140, 70)];
     pts.backgroundColor = [UIColor clearColor];
@@ -41,7 +41,29 @@
     hud.gamePoints.textColor = [UIColor colorWithRed:0.38 green:0.098 blue:0.035 alpha:1];
     [hud addSubview:hud.gamePoints];
     
+    
+    
+    // load the button image
+    UIImage *image = [UIImage imageNamed:@"btn"];
+    // the help button
+    hud.btnHelp = [UIButton buttonWithType:UIButtonTypeCustom];
+    [hud.btnHelp setTitle:@"Hint!" forState:UIControlStateNormal];
+    hud.btnHelp.titleLabel.font = kFontHud;
+    [hud.btnHelp setBackgroundImage:image forState:UIControlStateNormal];
+    hud.btnHelp.frame = CGRectMake(50, 30, image.size.width, image.size.height);
+    hud.btnHelp.alpha = 0.8;
+    [hud addSubview:hud.btnHelp];
+    
     return hud;
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    //1 let touches through and only catch the ones on buttons
+    UIView *hitView = (UIView *)[super hitTest:point withEvent:event];
+    if ([hitView isKindOfClass:[UIButton class]]) {
+        return hitView;
+    }
+    return nil;
 }
 
 /*

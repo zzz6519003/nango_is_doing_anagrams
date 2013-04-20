@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) StopwatchView *stopwatch;
 @property (strong, nonatomic) CounterLabelView *gamePoints;
+@property (strong, nonatomic) UIButton *btnHelp;
 
 + (instancetype)viewWithRect:(CGRect)r;
 

@@ -156,19 +156,30 @@
     for (TargetView *t in _targets) {
         if (t.isMatched == NO) return;
     }
-    [self.audioController playEffect:kSoundWin];
     NSLog(@"game over");
     
     // win animation
-    TargetView *firstTarget = _targets[0];
+    //win animation
+    TargetView* firstTarget = _targets[0];
     
     int startX = 0;
     int endX = kScreenWidth + 300;
     int startY = firstTarget.center.y;
     
-    StarDustView *stars = [[StarDustView alloc] initWithFrame:CGRectMake(startX, startY, 10, 10)];
+    StarDustView* stars = [[StarDustView alloc] initWithFrame:CGRectMake(startX, startY, 10, 10)];
     [self.gameView addSubview:stars];
     [self.gameView sendSubviewToBack:stars];
+    [UIView animateWithDuration:3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         // game finished
+                         stars.center = CGPointMake(endX, startY);
+                     } completion:^(BOOL finished) {
+                         [stars removeFromSuperview];
+                     }];
+    [self.audioController playEffect:kSoundWin];
+
 }
 
 - (void)startStopwatch {
@@ -189,5 +200,46 @@
     if (_secondsLeft == 0) {
         [self stopStopwatch];
     }
+}
+
+//connect the Hint button
+- (void)setHud:(HUDView *)hud {
+    _hud = hud;
+    [hud.btnHelp addTarget:self action:@selector(actionHint) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)actionHint {
+    self.hud.btnHelp.enabled = NO;
+    self.data.points -= self.level.pointsPerTile / 2;
+    [self.hud.gamePoints countTo:self.data.points withDuration:1.5];
+//    NSLog(@"Help!");
+    
+    TargetView *target = nil;
+    for (TargetView *t in _targets) {
+        if (t.isMatched == NO) {
+            target = t;
+            break;
+        }
+    }
+    
+    TileView *tile = nil;
+    for (TileView *t in _tiles) {
+        if (t.isMatched == NO && [t.letter isEqualToString:target.letter]) {
+            tile = t;
+            break;
+        }
+    }
+    
+    [self.gameView bringSubviewToFront:tile];
+    [UIView animateWithDuration:1.5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         tile.center = target.center;
+                     } completion:^(BOOL finished) {
+                         [self placeTile:tile atTarget:target];
+                         self.hud.btnHelp.enabled = YES;
+                         [self checkForSuccess];
+                     }];
 }
 @end
