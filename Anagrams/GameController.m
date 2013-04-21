@@ -177,6 +177,8 @@
                          stars.center = CGPointMake(endX, startY);
                      } completion:^(BOOL finished) {
                          [stars removeFromSuperview];
+                         [self clearBoard];
+                         self.onAnagramSolved();
                      }];
     [self.audioController playEffect:kSoundWin];
 
@@ -241,5 +243,15 @@
                          self.hud.btnHelp.enabled = YES;
                          [self checkForSuccess];
                      }];
+}
+
+
+//clear the tiles and targets
+- (void)clearBoard {
+    [_tiles removeAllObjects];
+    [_targets removeAllObjects];
+    for (UIView *view in self.gameView.subviews) {
+        [view removeFromSuperview];
+    }
 }
 @end

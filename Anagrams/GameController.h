@@ -14,7 +14,8 @@
 #import "GameData.h"
 #import "AudioController.h"
 
-
+//just under the imports at the top and above the interface declaration
+typedef void (^CallbackBlock)();
 
 @interface GameController : NSObject <TileDragDelegateProtocol>
 
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) HUDView *hud;
 @property (strong, nonatomic) GameData *data;
 @property (strong, nonatomic) AudioController *audioController;
+@property (strong, nonatomic) CallbackBlock onAnagramSolved;
+
 
 //display a new anagram on the screen
 - (void)dealRandomAnagram;
